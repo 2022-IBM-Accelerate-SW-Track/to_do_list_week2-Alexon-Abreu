@@ -24,12 +24,13 @@ Hints (Useful Resources):
 ### TO-DO List APP
 1. In this step, we will be adding the feature to display the date and time an item was added along with its task to the user. Also, we will be implementing a new component to display each item in the Todo list.
       + Navigate to `src/component/AddTodo.js`
-        1. In the Constructor method, add a new key w/ the name `date` set to an empty string to represent the current date 
-        2. In the handleChange function, place the newly created `date` key and update the value using `Date().toLocaleString('en-US')` method
-        3. In the handleSubmit function, make sure to set the newly created `date` key back to an empty string after passing the user values to the addTodo function
+        1. In the Constructor method, add a new key w/ the name `date` set to an empty string to represent the current date ✅
+        2. In the handleChange function, place the newly created `date` key and update the value using `Date().toLocaleString('en-US')` method ✅
+        3. In the handleSubmit function, make sure to set the newly created `date` key back to an empty string after passing the user values to the addTodo function ✅
+
       + Navigate to `src/component/todos.js`
-        1. If not present, import ListItemButton and ListItemText components from the material UI library
-        2. Within the Card component, substitute the CardContent component with a ListItemButton Component
+        1. If not present, import ListItemButton and ListItemText components from the material UI library ✅
+        2. Within the Card component, substitute the CardContent component with a ListItemButton Component ✅
             + **Before:**
                ```
                   <CardContent>
@@ -42,17 +43,18 @@ Hints (Useful Resources):
                     <ListItemText primary={todo.content}/>
                   </ListItemButton>
                 ```
-        3. Within the ListItemText component, add the `secondary` property next to the `primary` property to display the date for each task
-        4. (optional) Add `style={{marginTop:10}}` to the Card component to give space between each item in the Todo list and avoid item cards from overlapping each other
+        3. Within the ListItemText component, add the `secondary` property next to the `primary` property to display the date for each task ✅
+        4. (optional) Add `style={{marginTop:10}}` to the Card component to give space between each item in the Todo list and avoid item cards from overlapping each other ✅
 
 2. In this step, we will be adding the checkbox feature to correspond to a task being completed
       + Navigate to `src/component/todos.js`
-        1. If not present, import Checkbox from the material UI library
-        2. Within the ListItemButton component, Add a Checkbox component before the ListItemText component with a `style` property set to `paddingLeft:0` and a `color` property set to `primary`. **Hint:** `color` is a property of its own and not a property of `style`.
+        1. If not present, import Checkbox from the material UI library ✅
+        2. Within the ListItemButton component, Add a Checkbox component before the ListItemText component with a `style` property set to `paddingLeft:0` and a `color` property set to `primary`. **Hint:** `color` is a property of its own and not a property of `style`. ✅
+
 3. In this step, we will be adding the delete feature which will remove an item from the Todo list once it is complete (user clicks on checkbox button)
       + Navigate to `src/pages/Home.js`
         1. Implement the code snippet below for the deleteTodo() function before or after the addTodo() function\
-        **Note:** Click [**here**](https://upmostly.com/tutorials/react-filter-filtering-arrays-in-react-with-examples) to learn more about the **filter** function and how it is being used w/in the deleteTodo function to remove an item from our Todo list
+        **Note:** Click [**here**](https://upmostly.com/tutorials/react-filter-filtering-arrays-in-react-with-examples) to learn more about the **filter** function and how it is being used w/in the deleteTodo function to remove an item from our Todo list ✅
         ```
         deleteTodo = (id) => {
             const todos = this.state.todos.filter((todo) => {
@@ -64,10 +66,11 @@ Hints (Useful Resources):
         };
         ```
         2. Within the Todos component in the render() function, pass in an additional property\
-           `deleteTodo={make your change}` to correspond to the deleteTodo function. **Hint:** replace `make your change` with deleteTodo() function
+           `deleteTodo={make your change}` to correspond to the deleteTodo function. **Hint:** replace `make your change` with deleteTodo() function ✅
       + Navigate to `src/component/todos.js`
-        1. Add `deleteTodo` as a new property to the Todos component to correspond to the new deleteTodo() function
-        2. Within the Checkbox component, add an onClick event handler to call the deleteTodo() function and pass the todo item's `id` as a parameter. **Hint:** Use an Arrow Function. Click [**here**](https://reactjs.org/docs/faq-functions.html) to learn about passing functions to components.
+        1. Add `deleteTodo` as a new property to the Todos component to correspond to the new deleteTodo() function ✅
+        2. Within the Checkbox component, add an onClick event handler to call the deleteTodo() function and pass the todo item's `id` as a parameter. **Hint:** Use an Arrow Function. Click [**here**](https://reactjs.org/docs/faq-functions.html) to learn about passing functions to components. ✅
+        
 4. In this final step, We will be adding a validation feature to avoid having duplicate tasks w/in the Todo list.
       + Navigate to `src/pages/Home.js`
         1. In the addTodo() function, implement a code to determine if a task already exists before performing the action to add an item to the Todo list. There are plenty of ways to implement this feature.\
